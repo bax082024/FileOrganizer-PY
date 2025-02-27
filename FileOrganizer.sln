@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FileOrganizer", "FileOrganizer.pyproj", "{667A79CC-4AC3-47A2-BAD2-EDD0AD284FB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{667A79CC-4AC3-47A2-BAD2-EDD0AD284FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667A79CC-4AC3-47A2-BAD2-EDD0AD284FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A33BFAB-A8A7-40CD-BF1C-0FDBE725B84C}
+	EndGlobalSection
+EndGlobal
