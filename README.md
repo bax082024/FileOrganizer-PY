@@ -15,4 +15,19 @@ and includes an undo feature to restore files to their original locations.
 - **View & Export Log** – Users can view or export the log file after sorting.
 - **Error Handling** – Handles missing files, prevents crashes, and recreates deleted folders.
 
+---
+
+## Installation
+
+1. Make sure you have **Python 3.x** installed.
+2. clone repository or download script :
+	- https://github.com/bax082024/FileOrganizer-PY.git
+3. Run the script :
+	- To Organize files, open terminal or cmd and run : `python FileOrganizer.py`
+	- To Undo And Restore files, open terminal or cmd and run : `python UndoOrganizer.py`
+
+---
+
+
+
 
