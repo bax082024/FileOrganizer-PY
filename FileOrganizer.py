@@ -40,22 +40,28 @@ use_default = input("\nDo you want to use default categories? (yes/no): ").strip
 
 if use_default != "yes":
     file_categories = {}
-    
+
     print("\n🔹 Enter your custom categories one by one.")
     print("Example: Enter folder name first (e.g., 'Photos'), then add file types (e.g., '.jpg, .png').")
     print("Type 'done' when finished adding categories.")
 
     while True:
         category_name = input("\nEnter category name (or type 'done' to finish): ").strip()
-        
+
         if category_name.lower() == "done":
             break
-        
+
         file_types = input(f"Enter file types for '{category_name}' (comma-separated, e.g., .jpg, .png): ").strip()
-        
+
+        if not file_types:
+            print("You must enter at least one file type.")
+            continue
+
         file_categories[category_name] = [ext.strip().lower() for ext in file_types.split(",")]
 
         print(f"Category '{category_name}' added with file types: {file_categories[category_name]}")
+
+
 
 print("\nFinal Sorting Categories:")
 for cat, exts in file_categories.items():
