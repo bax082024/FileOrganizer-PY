@@ -70,10 +70,15 @@ for cat, exts in file_categories.items():
 input("\nPress Enter to start sorting files...")
 
 
+from datetime import datetime
+
 log_file = os.path.join(folder_path, "log.txt")
+sorted_count = 0
+category_summary = {}
 
 with open(log_file, "w") as log:
-    sorted_count = 0
+    log.write(f"Sorting Log - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+    log.write("=" * 50 + "\n")
 
     for file in files:
         file_ext = os.path.splitext(file)[1].lower()
@@ -92,9 +97,19 @@ with open(log_file, "w") as log:
         new_path = os.path.join(category_folder, file)
         shutil.move(old_path, new_path)
 
-        log.write(f"{new_path} -> {old_path}\n")
+        category_summary[category] = category_summary.get(category, 0) + 1
+
+        log.write(f"Moved: {file}\n")
+        log.write(f"   From: {old_path}\n")
+        log.write(f"   To:   {new_path}\n")
+        log.write("-" * 50 + "\n")
 
         print(f"Moved: {file} → {category}/")
         sorted_count += 1
 
+    log.write("\nSorting Summary:\n")
+    for cat, count in category_summary.items():
+        log.write(f"  - {cat}: {count} file(s)\n")
+
 print(f"\nAll {sorted_count} file(s) have been organized successfully! Log saved to 'log.txt'.")
+
