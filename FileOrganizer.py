@@ -36,6 +36,34 @@ if user_choice != "yes":
     print("Sorting canceled. No changes were made.")
     exit()
 
+use_default = input("\nDo you want to use default categories? (yes/no): ").strip().lower()
+
+if use_default != "yes":
+    file_categories = {}
+    
+    print("\n🔹 Enter your custom categories one by one.")
+    print("Example: Enter folder name first (e.g., 'Photos'), then add file types (e.g., '.jpg, .png').")
+    print("Type 'done' when finished adding categories.")
+
+    while True:
+        category_name = input("\nEnter category name (or type 'done' to finish): ").strip()
+        
+        if category_name.lower() == "done":
+            break
+        
+        file_types = input(f"Enter file types for '{category_name}' (comma-separated, e.g., .jpg, .png): ").strip()
+        
+        file_categories[category_name] = [ext.strip().lower() for ext in file_types.split(",")]
+
+        print(f"Category '{category_name}' added with file types: {file_categories[category_name]}")
+
+print("\nFinal Sorting Categories:")
+for cat, exts in file_categories.items():
+    print(f"  - {cat}: {', '.join(exts)}")
+
+input("\nPress Enter to start sorting files...")
+
+
 log_file = os.path.join(folder_path, "log.txt")
 
 with open(log_file, "w") as log:
