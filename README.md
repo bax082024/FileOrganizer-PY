@@ -6,6 +6,13 @@ and includes an undo feature to restore files to their original locations.
 
 ---
 
+## Features
 
+- **Automatic File Sorting** – Moves files into folders based on extensions.
+- **Custom Categories** – Users can define their own sorting rules.
+- **Undo Sorting** – Restore files to their original location.
+- **Log File (`log.txt`)** – Records all file movements with timestamps.
+- **View & Export Log** – Users can view or export the log file after sorting.
+- **Error Handling** – Handles missing files, prevents crashes, and recreates deleted folders.
 
 
