@@ -72,4 +72,16 @@ and includes an undo feature to restore files to their original locations.
 
 ---
 
+## Notes
+
+1. The script **does not delete** any files!
+2. Files with unknown extensions go into the **"Others"** folder.
+3. If a folder is deleted manually, the script will recreate it when restoring.
+
+---
+
+## Contact
+
+For questions or feedback, please contact :
+	- **bax082024@gmail.com**
 
