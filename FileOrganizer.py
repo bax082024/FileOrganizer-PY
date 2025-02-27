@@ -113,3 +113,23 @@ with open(log_file, "w") as log:
 
 print(f"\nAll {sorted_count} file(s) have been organized successfully! Log saved to 'log.txt'.")
 
+
+view_log = input("\nDo you want to view the sorting log? (yes/no): ").strip().lower()
+
+if view_log == "yes":
+    with open(log_file, "r") as log:
+        print("\nSorting Log:\n" + "=" * 50)
+        print(log.read())
+
+export_log = input("\nDo you want to export the log file? (yes/no): ").strip().lower()
+
+if export_log == "yes":
+    export_path = input("Enter the path where you want to save the log file (e.g., C:\\Users\\YourName\\Desktop): ").strip()
+    
+    if os.path.exists(export_path):
+        shutil.copy(log_file, os.path.join(export_path, "sorting_log.txt"))
+        print(f"Log file successfully exported to {export_path}\\sorting_log.txt")
+    else:
+        print("Invalid path. Log export canceled.")
+
+
